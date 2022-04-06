@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import { useState } from "react";
+import { suma, resta, ComponenteSimple } from "./funciones/funcionesSimples";
+import "./App.css"
 
-function App() {
+export default function App() {
+  const [conteo, funcionConteo] = useState(0);
+  const [cadenas, funcionCadena] = useState("cadena");
+  const [arreglos, funcionArreglo] = useState([
+    { nombre: "Diego" },
+    { nombre: "Mejia" },
+  ]);
+  const [objeto, funcionObjeto] = useState({ nombre: "Diego" });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello React World!!
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id="mainApp">
+      
+      {suma()}
+      
+      <ComponenteSimple />
+
+      <p>{conteo}</p>
+
+      <button onClick={() => funcionConteo(conteo + 1)}>Sumatoria</button>
+      <br></br>
+      <button onClick={() => funcionConteo(0)}>Reiniciar</button>
     </div>
   );
 }
-
-export default App;

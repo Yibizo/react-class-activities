@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+* {
+  background-color: rgb(3, 3, 3);
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#mainApp {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 30%;
+  margin: 10% auto 0 auto;
+  padding: 2%;
+  border: solid rgb(0, 0, 88) .3vw;
+}
