@@ -29,7 +29,7 @@ function RecordButtons () {
             const videoBlob = await recorder.getBlob();
 
             stream.stop();
-            
+
             setStream(null);
             setRecorder(null);
             setVideoBlob(videoBlob);
@@ -38,7 +38,7 @@ function RecordButtons () {
 
     function downloadVideo (event) {
         if (videoBlob) {
-            saveAs(videoBlob, `video_${Date.now()}.mp4`);
+            saveAs(videoBlob, `${new Date(Date.now()).toISOString().substr(0, 19).replace('T', ' ')}.mp4`);
         }
     }
 
